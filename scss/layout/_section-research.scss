@@ -1,0 +1,30 @@
+.research{
+    width: $col12;
+    margin-bottom: 15px;
+    border: 1px solid rgb(61, 61, 61);
+    background-color: #c7c7c7;
+    display: flex;
+    .research-category{
+        width: $col2;
+        text-align: center;
+        margin: 0;
+        height: 30px;
+        line-height: 33px;
+    }
+    .search{
+        width: $col10;
+        padding: 0;
+        margin: 0;
+        
+        .search-input{
+            width: 96.3%;
+            height: 30px;
+        }
+        .search-submit{
+            left: -10px;
+            width: 3%;
+            height: 36px;
+            border: none;
+        }
+    }
+}

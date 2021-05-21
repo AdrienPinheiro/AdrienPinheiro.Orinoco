@@ -1,0 +1,22 @@
+footer{
+    background-color: $primary;
+    .row{
+        justify-content: space-around;
+        ul{
+            list-style: none;
+            padding: 0;
+            width: $col2;
+            justify-content: space-around;
+        }
+        h2{
+            margin: 0 0 8px 0;
+            font-size: 1.2em;
+        }
+        li{
+            padding: 0 0 5px 0;
+            a{
+                @extend %link-style-none
+            }
+        }
+    }  
+}

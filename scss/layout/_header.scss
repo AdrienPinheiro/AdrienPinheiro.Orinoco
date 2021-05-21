@@ -1,0 +1,38 @@
+header{
+    .header-logo{
+        margin-top: 20px;
+        padding-left: 30px;
+        width: $col6;
+        a{
+            display: flex;
+            flex-direction: row;
+            @extend %link-style-none;
+            img{
+                width: 85px;
+                height: 65px;
+            }
+            h1{
+                line-height: 25px;
+                padding-left: 15px;
+            }
+        }
+    }
+    .header-nav{
+        width: $col6;
+        ul{
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            li{
+                justify-content: space-between;
+                line-height: 80px;
+                font-size: 1.5em;
+                padding-right: 45px;
+                padding-left: 25px;
+                a{
+                    @extend %link-style-none;
+                }
+            }
+        }
+    }
+}

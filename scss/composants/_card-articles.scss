@@ -1,0 +1,39 @@
+.card-articles{
+    display: flex;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    .card-img{
+        padding-left: 100px;
+        width: 50%;
+        height: 600px;
+    }
+    .card-img img{
+        width: 100%;
+        height: 100%;
+    }
+    .card-descriptif{
+        padding-top: 125px;
+        width: $col3;
+        h2{
+            text-align: center;
+            padding-bottom: 50px;
+        }
+        p{
+            text-align: center;
+            padding-bottom: 50px;
+        }
+    }
+}
+
+.articles-bear{
+    position: relative;
+    a{
+    @extend %link-style-none;
+         i{
+           font-size: 1.5em;
+           position: absolute;
+           left: 35px;
+           top: 20px;
+         }
+    }
+}
