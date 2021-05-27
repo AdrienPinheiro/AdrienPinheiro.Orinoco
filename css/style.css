@@ -1,4 +1,4 @@
-header .header-logo a, header .header-nav ul li a, .articles p a, footer .row li a, .articles-bear a, .panier a {
+header .header-logo a, header .header-nav ul li a, .articles .card-article a, footer .row li a, .articles-bear a, .panier a {
   color: black;
   text-decoration: none;
 }
@@ -105,16 +105,60 @@ header .header-nav ul li {
 }
 
 .articles {
-  height: 700px;
-  position: relative;
+  height: 600px;
 }
 
-.articles p {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+.articles .card-article {
+  height: 400px;
+  width: 300px;
+  border: 1px solid black;
+  border-radius: 25px;
+  margin: 30px;
+  overflow: hidden;
+}
+
+.articles .card-article a .card-img {
+  height: 250px;
+  width: 300px;
+  padding: 0;
+}
+
+.articles .card-article a .card-img img {
+  height: 100%;
+  width: 100%;
+}
+
+.articles .card-article a .card-description {
+  height: 50px;
+  width: 200px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  line-height: 0px;
+}
+
+.articles .card-article a .card-description .card-name {
+  font-size: 1.3em;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.articles .card-article a .card-description .card-price {
+  font-size: 1em;
+  padding: 10px 0;
+}
+
+.articles .card-article a .card-description .card-color {
+  font-size: 1em;
+  line-height: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 footer {
@@ -141,6 +185,106 @@ footer .row h2 {
 
 footer .row li {
   padding: 0 0 5px 0;
+}
+
+.Tan {
+  height: 20px;
+  width: 20px;
+  background-color: tan;
+  position: relative;
+  top: -3px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.Chocolate {
+  height: 20px;
+  width: 20px;
+  background-color: chocolate;
+  position: relative;
+  top: -3px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.Black {
+  height: 20px;
+  width: 20px;
+  background-color: black;
+  position: relative;
+  top: -3px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.White {
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  position: relative;
+  top: -3px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.Palebrown {
+  height: 20px;
+  width: 20px;
+  background-color: rgba(167, 67, 67, 0.644);
+  position: relative;
+  top: -3px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.Darckbrown {
+  height: 20px;
+  width: 20px;
+  background-color: rgba(97, 30, 30, 0.644);
+  position: relative;
+  top: -3px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.Brown {
+  height: 20px;
+  width: 20px;
+  background-color: brown;
+  position: relative;
+  top: -3px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.Blue {
+  height: 20px;
+  width: 20px;
+  background-color: blue;
+  position: relative;
+  top: -3px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.Pink {
+  height: 20px;
+  width: 20px;
+  background-color: pink;
+  position: relative;
+  top: -3px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.Beige {
+  height: 20px;
+  width: 20px;
+  background-color: beige;
+  position: relative;
+  top: -3px;
+  border-radius: 10px;
+  border: 1px solid black;
 }
 
 .card-articles {
