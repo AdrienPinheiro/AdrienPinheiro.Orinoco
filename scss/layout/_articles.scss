@@ -1,42 +1,49 @@
 .articles{
-    height: 600px;
-    .card-article{
-        height: 400px;
-        width: 300px;
-        border: 1px solid black;
-        border-radius: 25px;
-        margin: 30px;
-        overflow: hidden;
-        a{
-            @extend %link-style-none;
-            .card-img{
-                height: 250px;
-                width: 300px;
-                padding: 0;
-                img{
-                    height: 100%;
-                    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    .card-articles{
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 30px 0 30px;
+        .card-article{
+            width: $col3;
+            max-width: 330px;
+            border: 1px solid black;
+            border-radius: 25px;
+            margin: 30px 0px;
+            overflow: hidden;
+            a{
+                @extend %link-style-none;
+                .card-img{
+                    height: 250px;
+                    width: $col12;
+                    padding: 0;
                 }
-            }
-            .card-description{
-                height: 50px;
-                width: 200px;
-                flex-direction: column;
-                line-height: 0px;
-                .card-name{
-                    font-size: 1.3em;
-                    text-align: center; 
-                    padding-bottom: 10px;                   
-                }
-                .card-price{
-                    font-size: 1em;
-                    padding: 10px 0;
-                }
-                .card-color{
-                    font-size: 1em;
-                    line-height: 15px;
-                    display: flex;
-                    flex-direction: row;
+                .card-description{
+                    height: 100px;
+                    width: $col12;
+                    flex-direction: column;
+                    line-height: 0px;
+                    .card-name{
+                        font-size: 1.5em;
+                        text-align: center;                   
+                    }
+                    .card-price{
+                        font-size: 1.2em;
+                        padding: 10px 0 5px 25px;
+                    }
+                    .card-color{
+                        display: flex;
+                        flex-direction: row;
+                        padding-left: 25px;
+                        p{
+                            font-size: 1.2em;
+                        }
+                        div{
+                            margin-left: 5px;
+                        }
+                    }
                 }
             }
         }

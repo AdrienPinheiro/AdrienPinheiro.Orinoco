@@ -1,0 +1,37 @@
+.menu-btn{
+    visibility: hidden;
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    .menu{
+        position: absolute;
+        .column{
+            display: flex;
+            flex-direction: column;
+            .category{
+                ul{
+                    list-style: none;
+                }
+            }
+            .filtres{
+                ul{
+                    list-style: none;
+                }
+            }
+        }
+    }
+}
+
+.menu-background{
+    background-color: purple;
+    height: 100%;
+    width: 30%;
+    top: 0;
+    left: 0;
+}
+
+.menu-btn-appear{
+    visibility: visible !important;
+}

@@ -1,0 +1,36 @@
+.id{
+    visibility: hidden;
+    position: absolute;
+    z-index: -9999;
+}
+
+.teddy-articles{
+    a{
+
+    }
+    .teddy-card-articles{
+        height: 600px;
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        .teddy-card-article{
+            img{
+                width: 100%;
+                height: 100%;
+            }
+            .teddy-card-description{
+                h3{
+                    font-size: 1.5em;
+                }
+                p{
+                    font-size: 1.3em;
+                }
+                .teddy-card-color{
+                    display: flex;
+                    flex-direction: row;
+                }
+            }
+        }
+
+    }
+}
