@@ -21,7 +21,7 @@ function drawTeddies(teddies) {
         cardTeddy.setAttribute("class", "card-article");
 
         let cardLink = document.createElement("a");
-        cardLink.setAttribute("href", "/html/" + teddy._id + ".html");
+        cardLink.setAttribute("href", "/html/teddy.html?id=" + teddy._id);
         cardTeddy.append(cardLink);
 
         let cardDescrition = document.createElement("div");

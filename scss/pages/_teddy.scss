@@ -5,32 +5,42 @@
 }
 
 .teddy-articles{
+    position: relative;
     a{
-
+        position: absolute;
+        top: 10px;
+        left: 30px;
+        font-size: 2em;
     }
     .teddy-card-articles{
-        height: 600px;
-        width: 70%;
-        display: flex;
-        justify-content: center;
+        width: auto;
+        padding-bottom: 70px;
         .teddy-card-article{
+            display: flex;
+            height: 600px;
             img{
-                width: 100%;
-                height: 100%;
+                width: $col7;
+                height: auto;
             }
             .teddy-card-description{
+                width: $col5;
+                align-self: center;
                 h3{
-                    font-size: 1.5em;
+                    font-size: 2em;
+                    padding: 0 0 20px 10px;
                 }
                 p{
                     font-size: 1.3em;
+                    padding: 0 0 20px 0;
                 }
                 .teddy-card-color{
                     display: flex;
                     flex-direction: row;
+                    line-height: 0px;
+                    justify-content: space-between;
+                    width: 250px;
                 }
             }
-        }
-
+        }   
     }
 }
