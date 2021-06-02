@@ -2,21 +2,23 @@ footer{
     background-color: $primary;
     .row{
         justify-content: space-around;
-        display: flex;
-        ul{
-            list-style: none;
-            padding: 0;
-            width: $col2;
-            justify-content: space-around;
-        }
-        h2{
-            margin: 0 0 8px 0;
-            font-size: 1.2em;
-        }
-        li{
-            padding: 0 0 5px 0;
-            a{
-                @extend %link-style-none
+        div{
+            padding: 20px 0;
+            h2{
+                font-size: 1.2em;
+            }
+            ul{
+                list-style: none;
+                padding: 0;
+                li{
+                    padding-bottom: 7px;
+                    a{
+                        @extend %link-style-none;
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                }
             }
         }
     }  

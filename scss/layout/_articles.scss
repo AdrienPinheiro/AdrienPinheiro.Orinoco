@@ -1,6 +1,11 @@
 .articles{
     display: flex;
     flex-wrap: wrap;
+    h2{
+        visibility: hidden;
+        z-index: -1;
+        position: absolute;
+    }
     .card-articles{
         flex-wrap: wrap;
         display: flex;

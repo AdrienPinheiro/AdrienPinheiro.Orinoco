@@ -2,6 +2,11 @@
     margin-bottom: 15px;
     display: flex;
     justify-content: space-around;
+    h2{
+        visibility: hidden;
+        z-index: -1;
+        position: absolute;
+    }
     .research-category{
         width: 5%;
         text-align: center;
