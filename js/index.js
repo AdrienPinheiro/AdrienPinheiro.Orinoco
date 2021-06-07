@@ -21,7 +21,7 @@ function drawTeddies(teddies) {
         cardTeddy.setAttribute("class", "card-article");
 
         let cardLink = document.createElement("a");
-        cardLink.setAttribute("href", "/html/teddy.html?id=" + teddy._id);
+        cardLink.setAttribute("href", "teddy.html?id=" + teddy._id);
         cardTeddy.append(cardLink);
 
         let cardDescrition = document.createElement("div");
@@ -38,7 +38,7 @@ function drawTeddies(teddies) {
 
         let cardPrice = document.createElement("p")
         cardPrice.setAttribute("class", "card-price");
-        cardPrice.innerHTML = `Prix :${teddy.price}`;
+        cardPrice.innerHTML = `Prix : ${new Intl.NumberFormat('de-DE', { style:'currency', currency: 'EUR', minimumFractionDigits: 2}).format(teddy.price/100)}`;
 
         let cardColor = document.createElement("div");
         cardColor.setAttribute("class", "card-color");

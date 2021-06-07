@@ -295,12 +295,6 @@ footer .row div ul li a:hover {
   text-decoration: underline;
 }
 
-.id {
-  visibility: hidden;
-  position: absolute;
-  z-index: -9999;
-}
-
 .teddy-articles {
   position: relative;
 }
@@ -328,15 +322,20 @@ footer .row div ul li a:hover {
   display: -ms-flexbox;
   display: flex;
   height: 600px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .teddy-articles .teddy-card-articles .teddy-card-article img {
-  width: 58.33333%;
-  height: auto;
+  width: 700px;
+  height: 500px;
+  margin-top: 70px;
+  border: 1px solid black;
 }
 
 .teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-description {
-  width: 41.66667%;
+  width: 33.333%;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -344,12 +343,12 @@ footer .row div ul li a:hover {
 
 .teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-description h3 {
   font-size: 2em;
-  padding: 0 0 20px 10px;
+  padding: 0 0 20px 80px;
 }
 
 .teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-description p {
   font-size: 1.3em;
-  padding: 0 0 20px 0;
+  padding-left: 50px;
 }
 
 .teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-description .teddy-card-color {
