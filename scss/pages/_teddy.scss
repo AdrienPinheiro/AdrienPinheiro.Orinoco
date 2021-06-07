@@ -38,9 +38,13 @@
                 .teddy-card-color{
                     display: flex;
                     flex-direction: row;
-                    line-height: 0px;
-                    justify-content: space-between;
-                    width: 250px;
+                    line-height: 0;
+                    p{
+                        font-size: 1.3em;
+                    }
+                    div{
+                        margin-left: 10px;
+                    }
                 }
             }
         }   

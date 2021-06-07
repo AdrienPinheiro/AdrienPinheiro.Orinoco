@@ -359,11 +359,15 @@ footer .row div ul li a:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  line-height: 0px;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 250px;
+  line-height: 0;
+}
+
+.teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-description .teddy-card-color p {
+  font-size: 1.3em;
+}
+
+.teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-description .teddy-card-color div {
+  margin-left: 10px;
 }
 
 .Tan {
