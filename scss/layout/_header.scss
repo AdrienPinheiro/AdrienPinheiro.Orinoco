@@ -19,6 +19,7 @@ header{
     }
     .header-nav{
         width: $col6;
+        position: relative;
         ul{
             list-style: none;
             display: flex;
@@ -31,6 +32,16 @@ header{
                 padding-left: 25px;
                 a{
                     @extend %link-style-none;
+                }
+            }
+            .panier{
+                justify-content: center;
+                font-size: 1.5em;
+                a{
+                    @extend %link-style-none;
+                    i{
+                        padding-right: 10px;
+                    }
                 }
             }
         }

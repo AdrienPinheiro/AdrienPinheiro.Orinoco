@@ -1,6 +1,7 @@
 .articles{
     display: flex;
     flex-wrap: wrap;
+    
     h2{
         visibility: hidden;
         z-index: -1;
@@ -18,7 +19,14 @@
             border-radius: 25px;
             margin: 30px 0px;
             overflow: hidden;
-            a{
+            position: relative;
+            .card-add{
+                position: absolute;
+                z-index: 1;
+                bottom: 15px;
+                right: 30px
+            }
+            .teddy{
                 @extend %link-style-none;
                 .card-img{
                     height: 250px;

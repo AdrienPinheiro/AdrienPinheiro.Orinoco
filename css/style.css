@@ -1,4 +1,4 @@
-header .header-logo a, header .header-nav ul li a, .articles .card-articles .card-article a, footer .row div ul li a, .articles-bear a, .panier a {
+header .header-logo a, header .header-nav ul li a, header .header-nav ul .panier a, .articles .card-articles .card-article .teddy, footer .row div ul li a, .articles-bear a, .products-container a {
   color: black;
   text-decoration: none;
 }
@@ -75,6 +75,7 @@ header .header-logo a h1 {
 
 header .header-nav {
   width: 50%;
+  position: relative;
 }
 
 header .header-nav ul {
@@ -95,6 +96,17 @@ header .header-nav ul li {
   font-size: 1.5em;
   padding-right: 45px;
   padding-left: 25px;
+}
+
+header .header-nav ul .panier {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 1.5em;
+}
+
+header .header-nav ul .panier a i {
+  padding-right: 10px;
 }
 
 .research {
@@ -218,15 +230,23 @@ header .header-nav ul li {
   border-radius: 25px;
   margin: 30px 0px;
   overflow: hidden;
+  position: relative;
 }
 
-.articles .card-articles .card-article a .card-img {
+.articles .card-articles .card-article .card-add {
+  position: absolute;
+  z-index: 1;
+  bottom: 15px;
+  right: 30px;
+}
+
+.articles .card-articles .card-article .teddy .card-img {
   height: 250px;
   width: 100%;
   padding: 0;
 }
 
-.articles .card-articles .card-article a .card-description {
+.articles .card-articles .card-article .teddy .card-description {
   height: 100px;
   width: 100%;
   -webkit-box-orient: vertical;
@@ -236,17 +256,17 @@ header .header-nav ul li {
   line-height: 0px;
 }
 
-.articles .card-articles .card-article a .card-description .card-name {
+.articles .card-articles .card-article .teddy .card-description .card-name {
   font-size: 1.5em;
   text-align: center;
 }
 
-.articles .card-articles .card-article a .card-description .card-price {
+.articles .card-articles .card-article .teddy .card-description .card-price {
   font-size: 1.2em;
   padding: 10px 0 5px 25px;
 }
 
-.articles .card-articles .card-article a .card-description .card-color {
+.articles .card-articles .card-article .teddy .card-description .card-color {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -257,11 +277,11 @@ header .header-nav ul li {
   padding-left: 25px;
 }
 
-.articles .card-articles .card-article a .card-description .card-color p {
+.articles .card-articles .card-article .teddy .card-description .card-color p {
   font-size: 1.2em;
 }
 
-.articles .card-articles .card-article a .card-description .card-color div {
+.articles .card-articles .card-article .teddy .card-description .card-color div {
   margin-left: 5px;
 }
 
@@ -455,38 +475,143 @@ footer .row div ul li a:hover {
   top: 20px;
 }
 
-.panier {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 80px 0;
+.products-container {
+  max-width: 650px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 0 auto;
+  margin-top: 50px;
+  height: 600px;
   position: relative;
 }
 
-.panier a i {
-  font-size: 1.5em;
+.products-container a {
   position: absolute;
-  left: 35px;
-  top: 20px;
+  font-size: 1.5em;
+  top: -20px;
+  left: -50px;
 }
 
-.panier .panier-resume {
-  border: 1px solid black;
-  margin-right: 150px;
-  padding: 50px;
-  height: 600px;
+.products-container .product-header {
+  width: 100%;
+  max-width: 650px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  border-bottom: 4px solid lightgray;
+  margin: 0 auto;
 }
 
-.panier .panier-price {
-  border: 1px solid black;
-  padding: 50px;
-  height: 100px;
+.products-container .product-header .product-title {
+  width: 45%;
 }
 
-.panier .panier-price .panier-validator {
-  margin-left: 10px;
+.products-container .product-header .price {
+  width: 15%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.products-container .product-header .quantity {
+  width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.products-container .product-header .total {
+  width: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.products-container .products {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: auto;
+  position: relative;
+  padding: 10px 0;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.products-container .products .product {
+  width: 40%;
+  position: relative;
+}
+
+.products-container .products .product i {
+  position: absolute;
+  top: 70px;
+  z-index: 9;
+  left: 0;
+}
+
+.products-container .products .product img {
+  padding-left: 10px;
+  height: 150px;
+  width: 200px;
+}
+
+.products-container .products .product span {
+  position: absolute;
+  top: 70px;
+  right: 5px;
+}
+
+.products-container .products .price {
+  width: 15%;
+  text-align: center;
+}
+
+.products-container .products .quantity {
+  width: 30%;
+  text-align: center;
+}
+
+.products-container .products .quantity i {
+  font-size: 1.2em;
+  line-height: 0;
+}
+
+.products-container .products .quantity span {
+  font-size: 2em;
+}
+
+.products-container .products .total {
+  width: 15%;
+  text-align: center;
+}
+
+.products-container .products .panierTotalContainer {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  right: 10px;
+  bottom: -100px;
+}
+
+.products-container .products .panierTotalContainer .panierTotal {
+  padding-left: 10px;
 }
 /*# sourceMappingURL=style.css.map */

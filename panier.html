@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" href="css/style.min.css">
 
+    <script src="js/panier.js"></script>
     <script src="https://kit.fontawesome.com/49dac82f1e.js" crossorigin="anonymous"></script>
 
     <title>Orinoco</title>
@@ -26,63 +27,73 @@
         <nav class="header-nav">
             <ul>
                 <li class=""><a href="">Compte</a></li>
+                <li class="panier">
+                    <a href="panier.html">
+                        <i class="fas fa-shopping-basket" title="Panier">
+                        </i><span>0</span>
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
 
-    <section class="panier">
-        
-        <a href="index.html"><i class="fas fa-arrow-left"></i></a> 
-
-        <div class="panier-resume">
-            <p>Résumé du panier</p>
+    <section class="products-container">
+        <a href="index.html"><i class="fas fa-arrow-left"></i></a>
+        <div class="product-header">
+            <h5 class="product-title">Produit</h5>
+            <h5 class="price">Prix</h5>
+            <h5 class="quantity">Quantité</h5>
+            <h5 class="total">Total</h5>
         </div>
-
-        <div class="panier-price">
-            <p>Total panier</p>
-            <p>Prix:</p>
-            <button type="submit" class="panier-validator">
-                Valider
-            </button>    
-        </div>
+        <div class="products"></div>
     </section>
 
     <footer>
         <div class="row">
-            <ul>
+            <div>
                 <h2>Services et garanties</h2>
-                <li><a href="">Garanties et assurances</a></li>
-                <li><a href="">Mon espaces client</a></li>
-                <li><a href="">Aide au choix responsable</a></li>
-            </ul>
+                <ul>
+                    <li><a href="">Garanties et assurances</a></li>
+                    <li><a href="">Mon espaces client</a></li>
+                    <li><a href="">Aide au choix responsable</a></li>
+                </ul>
+            </div>
 
-            <ul>
+            <div>
                 <h2>Livraison et paiement</h2>
-                <li><a href="">Les modes et frais de livraison</a></li>
-                <li><a href="">Livraison en Europe</a></li>
-                <li><a href="">Livraison à l'international</a></li>
-            </ul>
+                <ul>
+                    <li><a href="">Les modes et frais de livraison</a></li>
+                    <li><a href="">Livraison en Europe</a></li>
+                    <li><a href="">Livraison à l'international</a></li>
+                </ul>
+            </div>
 
-            <ul>
+            <div>
                 <h2>Contactez-nous</h2>
-                <li><a href="">Contact Service Client</a></li>
-                <li><a href="">Contact Publicité</a></li>
-                <li><a href="">Orinoco recrute</a></li>
-            </ul>
+                <ul>
+                    <li><a href="">Contact Service Client</a></li>
+                    <li><a href="">Contact Publicité</a></li>
+                    <li><a href="">Orinoco recrute</a></li>
+                </ul>
+            </div>
 
-            <ul>
+            <div>
                 <h2>Découvrez notre marketplace</h2>
+                <ul>
                 <li><a href="">Vendre sur Orinoco</a></li>
                 <li><a href="">Accès espace vendeur</a></li>
                 <li><a href="">FAQ</a></li>
-            </ul>
+                </ul>
+            </div>
 
-            <ul>
-                <h2>Informations legales</h2>
-                <li><a href="">Conditions générales de vente</a></li>
-                <li><a href="">Conditions générales d'utilisation du marketplace</a></li>
-                <li><a href="">Mentions légales</a></li>
-            </ul>
+            <div>
+                <h2>Informations légales</h2>
+                <ul>
+                    <li><a href="">Conditions générales de vente</a></li>
+                    <li><a href="">Conditions générales d'utilisation du marketplace</a></li>
+                    <li><a href="">Mentions légales</a></li>
+                </ul>
+            </div>
         </div>
     </footer>
 </body>
