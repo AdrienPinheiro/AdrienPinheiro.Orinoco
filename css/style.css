@@ -103,10 +103,23 @@ header .header-nav ul .panier {
       -ms-flex-pack: center;
           justify-content: center;
   font-size: 1.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 header .header-nav ul .panier a i {
   padding-right: 10px;
+}
+
+header .header-nav ul .panier a .sr-only {
+  position: initial;
+  margin: 0;
+  padding: 0;
 }
 
 .research {
@@ -354,24 +367,29 @@ footer .row div ul li a:hover {
   border: 1px solid black;
 }
 
-.teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-description {
+.teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif {
   width: 33.333%;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
 }
 
-.teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-description h3 {
+.teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif h3 {
   font-size: 2em;
   padding: 0 0 20px 80px;
 }
 
-.teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-description p {
+.teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif p {
   font-size: 1.3em;
   padding-left: 50px;
 }
 
-.teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-description .teddy-card-color {
+.teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif .teddy-card-description {
+  width: 100%;
+  padding-bottom: 15px;
+}
+
+.teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif .teddy-card-color {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -382,11 +400,11 @@ footer .row div ul li a:hover {
   line-height: 0;
 }
 
-.teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-description .teddy-card-color p {
+.teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif .teddy-card-color p {
   font-size: 1.3em;
 }
 
-.teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-description .teddy-card-color div {
+.teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif .teddy-card-color div {
   margin-left: 10px;
 }
 

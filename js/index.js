@@ -67,6 +67,7 @@ function panier(product){
 
     for(let i = 0; i < add.length; i++){
         add[i].addEventListener("click", () =>{
+            setItems(product[i]);
             cardNumbers(product[i]);
             total(product[i]);
         })
@@ -84,7 +85,6 @@ function panier(product){
             localStorage.setItem('cardNumbers', 1);
             document.querySelector('.panier span').textContent = 1;            
         }
-        setItems(product);
     }
 
     function onLoad(){
@@ -102,14 +102,15 @@ function panier(product){
 
         if (cardItems != null){
             if(cardItems[product.name] == undefined){
+                product.inCart = 0;
                 cardItems = {
                     ...cardItems,
-                    [product.name]: product
+                    [product.name]: product,
                 }
             }
-            cardItems[product.name].inCard += 1;
+            cardItems[product.name].inCart += 1;
         } else {
-            product.inCard = 1;
+            product.inCart = 1;
             cardItems = {
                 [product.name]: product
             }

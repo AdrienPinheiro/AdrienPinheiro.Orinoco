@@ -3,6 +3,7 @@ let add = document.querySelectorAll('.card-add');
 
 for(let i = 0; i < add.length; i++){
     add[i].addEventListener("click", () =>{
+        setItems(product[i]);
         cardNumbers(product[i]);
         total(product[i]);
     })
@@ -20,7 +21,6 @@ function cardNumbers(product){
         localStorage.setItem('cardNumbers', 1);
         document.querySelector('.panier span').textContent = 1;            
     }
-    setItems(product);
 }
 
 function onLoad(){
@@ -38,14 +38,15 @@ function setItems(product){
 
     if (cardItems != null){
         if(cardItems[product.name] == undefined){
+            product.inCart = 0;
             cardItems = {
                 ...cardItems,
-                [product.name]: product
+                [product.name]: product,
             }
         }
-        cardItems[product.name].inCard += 1;
+        cardItems[product.name].inCart += 1;
     } else {
-        product.inCard = 1;
+        product.inCart = 1;
         cardItems = {
             [product.name]: product
         }
@@ -85,11 +86,11 @@ function productCard(){
             <div class="price">${new Intl.NumberFormat('de-DE', { style:'currency', currency: 'EUR', minimumFractionDigits: 2}).format(item.price/100)}</div>
             <div class= "quantity">
                 <i class="fas fa-arrow-left"></i>
-                <span>${item.inCard}</span>
+                <span>${item.inCart}</span>
                 <i class="fas fa-arrow-right"></i>
             </div>
             <div class="total">
-                ${new Intl.NumberFormat('de-DE', { style:'currency', currency: 'EUR', minimumFractionDigits: 2}).format(item.inCard * item.price/100)}
+                ${new Intl.NumberFormat('de-DE', { style:'currency', currency: 'EUR', minimumFractionDigits: 2}).format(item.inCart * item.price/100)}
             </div>
             `;
         });

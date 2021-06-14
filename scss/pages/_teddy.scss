@@ -24,7 +24,7 @@
                 margin-top: 70px;
                 border: 1px solid black;
             }
-            .teddy-card-description{
+            .teddy-card-descriptif{
                 width: $col4;
                 align-self: center;
                 h3{
@@ -34,6 +34,10 @@
                 p{
                     font-size: 1.3em;
                     padding-left: 50px;
+                }
+                .teddy-card-description{
+                    width: 100%;
+                    padding-bottom: 15px;
                 }
                 .teddy-card-color{
                     display: flex;
