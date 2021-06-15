@@ -79,7 +79,7 @@ function productCard(){
         Object.values(cardItems).map(item =>{
             productsContainer.innerHTML += `
             <div class="product">
-                <i class="fas fa-times-circle"></i>
+                <i class="fas fa-times-circle remove-cart"></i>
                 <img src="${item.imageUrl}">
                 <span>${item.name}</span>
             </div>  
@@ -106,13 +106,22 @@ function productCard(){
             </div>
         `
     }
+    let removeCart = document.getElementsByClassName('remove-cart')
+
+    for(let i = 0; i < removeCart.length; i++){
+        let button = removeCart[i];
+        button.addEventListener('click', function (e) {
+            let cardItems = localStorage.getItem('differentProduct', JSON.stringify(cardItems));
+            let buttonClicked = event.target;
+            buttonClicked.cardItems[i].remove()
+        })
+    }
     
 }
-
 onLoad();
 productCard();
 },false);
 
 
 
-    
+     

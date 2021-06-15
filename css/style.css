@@ -1,9 +1,9 @@
-header .header-logo a, header .header-nav ul li a, header .header-nav ul .panier a, .articles .card-articles .card-article .teddy, footer .row div ul li a, .articles-bear a, .products-container a {
+header .header-logo a, header .header-nav ul li a, header .header-nav ul .panier a, .articles .card-articles .card-article .teddy, footer .row div ul li a, .teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif .teddy-add, .articles-bear a, .products-container a {
   color: black;
   text-decoration: none;
 }
 
-.Tan, .Chocolate, .Black, .White, .Palebrown, .Darckbrown, .Brown, .Blue, .Pink, .Beige {
+.Tan, .Chocolate, .Black, .White, .Pale, .Dark, .Brown, .Blue, .Pink, .Beige {
   height: 20px;
   width: 20px;
   position: relative;
@@ -384,6 +384,16 @@ footer .row div ul li a:hover {
   padding-left: 50px;
 }
 
+.teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif .teddy-add {
+  position: relative;
+  border: 1px solid black;
+  padding: 5px;
+  background-color: blueviolet;
+  color: white;
+  font-size: 1.3em;
+  margin-left: 20px;
+}
+
 .teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif .teddy-card-description {
   width: 100%;
   padding-bottom: 15px;
@@ -398,14 +408,49 @@ footer .row div ul li a:hover {
       -ms-flex-direction: row;
           flex-direction: row;
   line-height: 0;
+  padding: 30px 0;
 }
 
 .teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif .teddy-card-color p {
   font-size: 1.3em;
 }
 
-.teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif .teddy-card-color div {
-  margin-left: 10px;
+.teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif .teddy-card-color .select-color {
+  overflow-y: visible;
+  padding: 0 40px 10px 0;
+  margin: 0 0 0 25px;
+  border: none;
+  overflow-x: visible;
+  text-align: center;
+}
+
+.teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif .teddy-card-color .select-color option:active {
+  background: transparent;
+}
+
+.teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif .teddy-card-number {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  line-height: 0;
+  padding-bottom: 20px;
+}
+
+.teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif .teddy-card-number p {
+  padding-right: 5px;
+}
+
+.teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif .teddy-card-number .select-number {
+  height: 1.3em;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: center;
+  width: 50px;
 }
 
 .Tan {
@@ -424,11 +469,11 @@ footer .row div ul li a:hover {
   background-color: white;
 }
 
-.Palebrown {
+.Pale {
   background-color: rgba(167, 67, 67, 0.644);
 }
 
-.Darckbrown {
+.Dark {
   background-color: rgba(97, 30, 30, 0.644);
 }
 
