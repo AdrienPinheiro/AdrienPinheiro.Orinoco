@@ -76,10 +76,9 @@ function drawTeddy(teddy){
     }
 
     let selectNumber = document.createElement('input');
-    selectNumber.setAttribute('class', 'style');
-    selectNumber.setAttribute('id', 'number-teddy');
-    selectNumber.setAttribute('type', 'text');
-    selectNumber.setAttribute('class', 'select-number');
+    selectNumber.setAttribute('id', 'select-number');
+    selectNumber.setAttribute('type', 'number');
+    selectNumber.setAttribute('min', '1');
     cartNumber.append(selectNumber);
 
     cardArticles.append(cardTeddy);
@@ -87,74 +86,13 @@ function drawTeddy(teddy){
 
 function panier(product){
     let add = document.querySelectorAll('.teddy-add');
-    
 
     for(let i = 0; i < add.length; i++){
         add[i].addEventListener("click", () =>{
-            setItems(product);
-            cardNumbers(product);
-            total(product);
+            let quantity = parseInt(document.getElementById('select-number').value);
+            addProduct(product, quantity);
         })
     }
-
-    function cardNumbers(product){
-        let productNumbers = localStorage.getItem('cardNumbers');
-
-        productNumbers = parseInt(productNumbers);
-
-        if(productNumbers){
-            localStorage.setItem('cardNumbers', productNumbers + 1);
-            document.querySelector('.panier span').textContent = productNumbers + 1;            
-        } else {
-            localStorage.setItem('cardNumbers', 1);
-            document.querySelector('.panier span').textContent = 1;            
-        }
-    }
-
-    function onLoad(){
-        let productNumbers = localStorage.getItem('cardNumbers');
-
-        if(productNumbers){
-            document.querySelector('.panier span').textContent = productNumbers;
-        }
-    } 
-
-    function setItems(product){
-        let cardItems = localStorage.getItem('differentProduct');
-
-        cardItems = JSON.parse(cardItems);
-
-        if (cardItems != null){
-            if(cardItems[product.name] == undefined){
-                product.inCart = 0;
-                cardItems = {
-                    ...cardItems,
-                    [product.name]: product,
-                }
-            }
-            cardItems[product.name].inCart += 1;
-        } else {
-            product.inCart = 1;
-            cardItems = {
-                [product.name]: product
-            }
-        }
-        localStorage.setItem("differentProduct", JSON.stringify(cardItems));
-    }
-
-    function total(product){
-        let cardPrice = localStorage.getItem("total");
-
-        if(cardPrice != null){
-            cardPrice = parseInt(cardPrice);
-            localStorage.setItem("total", new Intl.NumberFormat('de-DE', { style:'currency', currency: 'EUR', minimumFractionDigits: 2}).format(cardPrice + product.price/100));
-        } else {
-            localStorage.setItem("total", new Intl.NumberFormat('de-DE', { style:'currency', currency: 'EUR', minimumFractionDigits: 2}).format(product.price/100));
-        }
-
-    }
-
-    onLoad();
 }
 
 window.addEventListener("DOMContentLoaded", function (){

@@ -1,69 +1,54 @@
-window.addEventListener("DOMContentLoaded", function (){
-let add = document.querySelectorAll('.card-add');
-
-for(let i = 0; i < add.length; i++){
-    add[i].addEventListener("click", () =>{
-        setItems(product[i]);
-        cardNumbers(product[i]);
-        total(product[i]);
-    })
-}
-
-function cardNumbers(product){
-    let productNumbers = localStorage.getItem('cardNumbers');
-
-    productNumbers = parseInt(productNumbers);
-
-    if(productNumbers){
-        localStorage.setItem('cardNumbers', productNumbers + 1);
-        document.querySelector('.panier span').textContent = productNumbers + 1;            
-    } else {
-        localStorage.setItem('cardNumbers', 1);
-        document.querySelector('.panier span').textContent = 1;            
-    }
-}
+let add = null;
+let cartNumberProduct = null;
 
 function onLoad(){
-    let productNumbers = localStorage.getItem('cardNumbers');
+    add = document.querySelectorAll('.card-add');
+    cartNumberProduct = document.querySelector('.panier span');
+
+    let productNumbers = localStorage.getItem('numberProduct');
 
     if(productNumbers){
-        document.querySelector('.panier span').textContent = productNumbers;
+        cartNumberProduct.textContent = productNumbers;
     }
+    productCard();
 } 
 
-function setItems(product){
+function addProduct(product, quantity = 1){
     let cardItems = localStorage.getItem('differentProduct');
 
     cardItems = JSON.parse(cardItems);
 
     if (cardItems != null){
-        if(cardItems[product.name] == undefined){
-            product.inCart = 0;
+        if(cardItems[product._id] == undefined){
+            product.quantity = 0;
             cardItems = {
                 ...cardItems,
-                [product.name]: product,
+                [product._id]: product,
             }
         }
-        cardItems[product.name].inCart += 1;
+        cardItems[product._id].quantity += quantity;
     } else {
-        product.inCart = 1;
+        product.quantity = quantity;
         cardItems = {
-            [product.name]: product
+            [product._id]: product
         }
     }
     localStorage.setItem("differentProduct", JSON.stringify(cardItems));
+    computeCartAttr();
 }
 
-function total(product){
-    let cardPrice = localStorage.getItem("total");
+function computeCartAttr(){
+    let products = JSON.parse(localStorage.getItem("differentProduct"));
+    let total = 0;
+    let numberProduct = 0;
 
-    if(cardPrice != null){
-        cardPrice = parseInt(cardPrice);
-        localStorage.setItem("total", new Intl.NumberFormat('de-DE', { style:'currency', currency: 'EUR', minimumFractionDigits: 2}).format(cardPrice + product.price/100));
-    } else {
-        localStorage.setItem("total", new Intl.NumberFormat('de-DE', { style:'currency', currency: 'EUR', minimumFractionDigits: 2}).format(product.price/100));
-    }
-
+    Object.values(products).map(product => {
+        total += product.price * product.quantity;
+        numberProduct += product.quantity;
+    })
+    localStorage.setItem("total", new Intl.NumberFormat('de-DE', { style:'currency', currency: 'EUR', minimumFractionDigits: 2}).format(total/100));
+    localStorage.setItem('numberProduct', numberProduct);
+    cartNumberProduct.textContent = numberProduct;
 }
 
 function productCard(){
@@ -86,11 +71,11 @@ function productCard(){
             <div class="price">${new Intl.NumberFormat('de-DE', { style:'currency', currency: 'EUR', minimumFractionDigits: 2}).format(item.price/100)}</div>
             <div class= "quantity">
                 <i class="fas fa-arrow-left"></i>
-                <span>${item.inCart}</span>
+                <span>${item.quantity}</span>
                 <i class="fas fa-arrow-right"></i>
             </div>
             <div class="total">
-                ${new Intl.NumberFormat('de-DE', { style:'currency', currency: 'EUR', minimumFractionDigits: 2}).format(item.inCart * item.price/100)}
+                ${new Intl.NumberFormat('de-DE', { style:'currency', currency: 'EUR', minimumFractionDigits: 2}).format(item.quantity * item.price/100)}
             </div>
             `;
         });
@@ -118,9 +103,8 @@ function productCard(){
     }
     
 }
-onLoad();
-productCard();
-},false);
+
+window.addEventListener("DOMContentLoaded", onLoad, false);
 
 
 
