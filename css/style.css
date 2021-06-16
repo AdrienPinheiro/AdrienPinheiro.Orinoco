@@ -413,19 +413,35 @@ footer .row div ul li a:hover {
 
 .teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif .teddy-card-color p {
   font-size: 1.3em;
+  padding-right: 20px;
 }
 
 .teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif .teddy-card-color .select-color {
   overflow-y: visible;
-  padding: 0 40px 10px 0;
-  margin: 0 0 0 25px;
+  padding: 0 0px 10px 0;
+  margin: 0;
   border: none;
   overflow-x: visible;
   text-align: center;
 }
 
+.teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif .teddy-card-color .select-color option {
+  margin-bottom: 10px;
+}
+
 .teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif .teddy-card-color .select-color option:active {
   background: transparent;
+}
+
+.teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif .teddy-card-color .select-color-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 13px;
 }
 
 .teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif .teddy-card-number {
@@ -444,13 +460,133 @@ footer .row div ul li a:hover {
   padding-right: 5px;
 }
 
-.teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif .teddy-card-number .select-number {
+.teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif .teddy-card-number #select-number {
   height: 1.3em;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
   text-align: center;
   width: 50px;
+}
+
+.formulaire {
+  padding-top: 100px;
+}
+
+.formulaire .form-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.formulaire .form-container h2 {
+  text-align: center;
+}
+
+.formulaire .form-container .form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row-align: center;
+      align-self: center;
+  padding-top: 40px;
+}
+
+.formulaire .form-container .form .firstName {
+  padding-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.formulaire .form-container .form .firstName label {
+  text-align: center;
+}
+
+.formulaire .form-container .form .lastName {
+  padding-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.formulaire .form-container .form .lastName label {
+  text-align: center;
+}
+
+.formulaire .form-container .form .adress {
+  padding-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.formulaire .form-container .form .adress label {
+  text-align: center;
+}
+
+.formulaire .form-container .form .postalCode {
+  padding-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.formulaire .form-container .form .postalCode label {
+  text-align: center;
+}
+
+.formulaire .form-container .form .city {
+  padding-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.formulaire .form-container .form .city label {
+  text-align: center;
+}
+
+.formulaire .form-container .form .email {
+  padding-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.formulaire .form-container .form .email label {
+  text-align: center;
+}
+
+.formulaire .form-container .form button {
+  margin: 30px 0 60px 0;
 }
 
 .Tan {
@@ -544,7 +680,6 @@ footer .row div ul li a:hover {
       justify-content: space-around;
   margin: 0 auto;
   margin-top: 50px;
-  height: 600px;
   position: relative;
 }
 
@@ -603,66 +738,81 @@ footer .row div ul li a:hover {
 }
 
 .products-container .products {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
-  height: auto;
   position: relative;
   padding: 10px 0;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
 }
 
 .products-container .products .product {
+  width: 100%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.products-container .products .product .cardImg {
   width: 40%;
   position: relative;
 }
 
-.products-container .products .product i {
+.products-container .products .product .cardImg i {
   position: absolute;
   top: 70px;
   z-index: 9;
   left: 0;
 }
 
-.products-container .products .product img {
+.products-container .products .product .cardImg img {
   padding-left: 10px;
   height: 150px;
   width: 200px;
 }
 
-.products-container .products .product span {
+.products-container .products .product .cardImg span {
   position: absolute;
   top: 70px;
   right: 5px;
 }
 
-.products-container .products .price {
+.products-container .products .product .price {
   width: 15%;
   text-align: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
-.products-container .products .quantity {
+.products-container .products .product .quantity {
   width: 30%;
   text-align: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
-.products-container .products .quantity i {
+.products-container .products .product .quantity a {
+  position: initial;
+}
+
+.products-container .products .product .quantity a i {
   font-size: 1.2em;
   line-height: 0;
 }
 
-.products-container .products .quantity span {
+.products-container .products .product .quantity span {
   font-size: 2em;
 }
 
-.products-container .products .total {
+.products-container .products .product .total {
   width: 15%;
   text-align: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .products-container .products .panierTotalContainer {

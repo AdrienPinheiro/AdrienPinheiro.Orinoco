@@ -1,0 +1,66 @@
+.formulaire{
+    padding-top: 100px;
+    .form-container{
+        display: flex;
+        flex-direction: column;
+        h2{
+            text-align: center;
+        }
+        .form{
+            display: grid;
+            align-self: center;
+            padding-top: 40px;
+            .firstName{
+                padding-bottom: 20px;
+                display: flex;
+                flex-direction: column;
+                label{
+                    text-align: center;
+                }
+            }
+            .lastName{
+                padding-bottom: 20px;
+                display: flex;
+                flex-direction: column;
+                label{
+                    text-align: center;
+                }
+            }
+            .adress{
+                padding-bottom: 20px;
+                display: flex;
+                flex-direction: column;
+                label{
+                    text-align: center;
+                }
+            }
+            .postalCode{
+                padding-bottom: 20px;
+                display: flex;
+                flex-direction: column;
+                label{
+                    text-align: center;
+                }
+            }
+            .city{
+                padding-bottom: 20px;
+                display: flex;
+                flex-direction: column;
+                label{
+                    text-align: center;
+                }
+            }
+            .email{
+                padding-bottom: 20px;
+                display: flex;
+                flex-direction: column;
+                label{
+                    text-align: center;
+                }
+            }
+            button{
+                margin: 30px 0 60px 0;
+            }
+        }
+    }
+}

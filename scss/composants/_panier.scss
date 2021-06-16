@@ -3,7 +3,6 @@
     justify-content: space-around;
     margin: 0 auto;
     margin-top: 50px;
-    height: 600px;
     position: relative;
     
     a{
@@ -40,51 +39,58 @@
         }
     }
     .products{
-        display: flex;
-        align-items: center;
-        width: 100%;
-        height: auto;
         position: relative;
         padding: 10px 0;
-        flex-wrap: wrap;
         .product{
-            width: 40%;
-            position: relative;
-            i{
-                position: absolute;
-                top: 70px;
-                z-index: 9;
-                left: 0;
+            width: 100%;
+            flex-direction: row;
+            height: 150px;
+            display: flex;
+            .cardImg{
+                width: 40%;
+                position: relative;
+                i{
+                    position: absolute;
+                    top: 70px;
+                    z-index: 9;
+                    left: 0;
+                }
+                img{
+                    padding-left: 10px;
+                    height: 150px;
+                    width: 200px;
+                }
+                span{
+                    position: absolute;
+                    top: 70px;
+                    right: 5px;
+                }
             }
-            img{
-                padding-left: 10px;
-                height: 150px;
-                width: 200px;
+            .price{
+                width: 15%;
+                text-align: center;
+                align-self: center;
             }
-            span{
-                position: absolute;
-                top: 70px;
-                right: 5px;
+            .quantity{
+                width: 30%;
+                text-align: center;
+                align-self: center;
+                a{
+                    position: initial;
+                    i{
+                        font-size: 1.2em;
+                        line-height: 0
+                    }
+                }
+                span{
+                    font-size: 2em;
+                }
             }
-        }
-        .price{
-            width: 15%;
-            text-align: center;
-        }
-        .quantity{
-            width: 30%;
-            text-align: center;
-            i{
-                font-size: 1.2em;
-                line-height: 0
+            .total{
+                width: 15%;
+                text-align: center;
+                align-self: center;
             }
-            span{
-                font-size: 2em;
-            }
-        }
-        .total{
-            width: 15%;
-            text-align: center;
         }
         .panierTotalContainer{
             position: absolute;

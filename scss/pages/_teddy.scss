@@ -56,19 +56,26 @@
                     padding: 30px 0;
                     p{
                         font-size: 1.3em;
+                        padding-right: 20px;
                     }
                     .select-color{
                         overflow-y: visible;
-                        padding: 0 40px 10px 0;
-                        margin: 0 0 0 25px;
+                        padding: 0 0px 10px 0;
+                        margin: 0;
                         border: none;
                         overflow-x: visible;
                         text-align: center;
                         option{
+                            margin-bottom: 10px;
                             &:active{
                                 background: transparent;
                             }
                         }
+                    }
+                    .select-color-name{
+                        display: flex;
+                        flex-direction: column;
+                        font-size: 13px;
                     }
                 }
                 .teddy-card-number{
@@ -79,7 +86,7 @@
                     p{
                         padding-right: 5px;
                     }
-                    .select-number{
+                    #select-number{
                         height: 1.3em;
                         align-self: center;
                         text-align: center;

@@ -63,16 +63,23 @@ function drawTeddy(teddy){
     let selectColor = document.createElement('select');
     selectColor.setAttribute('class', 'select-color');
     selectColor.size = 4;
-    cardColor.append(selectColor);
+
+    let selectColorName = document.createElement('div');
+    selectColorName.setAttribute('class', 'select-color-name');
+    cardColor.append(selectColor, selectColorName);
 
     const teddyColors = teddy.colors;
 
     for(i = 0; i < teddyColors.length; i++){
-    let teddyColor = document.createElement("option");
-    teddyColor.value = teddyColors.length; // a chercher
-    teddyColor.setAttribute("class", teddyColors[i]); // petit prob sur certain
-    teddyColor.label = teddy.colors[i];
-    selectColor.append(teddyColor);
+        let teddyColor = document.createElement("option");
+        let teddyColorName = document.createElement("p");
+
+        teddyColor.value = teddyColors.length; // a chercher
+        teddyColor.setAttribute("class", teddyColors[i]); // petit prob sur certain
+        selectColor.append(teddyColor);
+        
+        teddyColorName.innerHTML = `:${teddy.colors[i]}`;
+        selectColorName.append(teddyColorName);
     }
 
     let selectNumber = document.createElement('input');
