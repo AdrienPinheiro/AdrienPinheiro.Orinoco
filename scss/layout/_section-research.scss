@@ -12,6 +12,9 @@
         text-align: center;
         padding: 0;
         line-height: 33px;
+        @include mobile-only{
+            width: 10%;
+        }
     }
     .search{
         width: $col11;
@@ -20,6 +23,10 @@
         .search-input{
             width: 90%;
             height: 30px;
+            @include mobile-only{
+                width: 85%;
+                text-align: center;
+            }
         }
         .search-submit{
             position: relative;

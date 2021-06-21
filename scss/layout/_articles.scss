@@ -12,6 +12,9 @@
         display: flex;
         justify-content: space-between;
         padding: 0 30px 0 30px;
+        @include ecran{
+            justify-content: space-around;
+        }
         .card-article{
             width: $col3;
             max-width: 330px;
@@ -20,11 +23,11 @@
             margin: 30px 0px;
             overflow: hidden;
             position: relative;
-            .card-add{
-                position: absolute;
-                z-index: 1;
-                bottom: 15px;
-                right: 30px
+            @include ecran{
+                width: $col6;
+            }
+            @include mobile-only{
+                width: $col12;
             }
             .teddy{
                 @extend %link-style-none;
@@ -46,15 +49,29 @@
                         font-size: 1.2em;
                         padding: 10px 0 5px 25px;
                     }
-                    .card-color{
+                    .cardRow{
                         display: flex;
                         flex-direction: row;
-                        padding-left: 25px;
-                        p{
-                            font-size: 1.2em;
+                        justify-content: space-between;
+                        .card-color{
+                            display: flex;
+                            flex-direction: row;
+                            padding-left: 25px;
+                            p{
+                                font-size: 1.2em;
+                            }
+                            div{
+                                margin-left: 5px;
+                            }
                         }
-                        div{
-                            margin-left: 5px;
+                        .card-add{
+                            @extend %link-style-none;
+                            z-index: 5;
+                            border: 1px solid black;
+                            border-radius: 5px;
+                            align-self: center; 
+                            padding: 10px;    
+                            margin-right: 10px;                      
                         }
                     }
                 }

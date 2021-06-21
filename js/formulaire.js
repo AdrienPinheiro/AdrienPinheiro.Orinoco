@@ -1,6 +1,7 @@
 function purshase() {
-    document.getElementById('confirmPurshase').onclick = () =>{
-        sendOrder();
+    document.getElementById('confirmPurshase').onclick = (e) =>{
+        sendOrder(e);
+        e.preventDefault();
     }
     
     watchValidity(document.getElementById('firstName'), (e) => e.target.value.length > 1);
@@ -17,7 +18,6 @@ function purshase() {
     watchValidity(document.getElementById('city'), (e) => e.target.value.length > 1)
 }
 
-purshase();
 
 function watchValidity(e, condition) {
     e.oninput = (e) => {
@@ -53,31 +53,42 @@ function watchValidity(e, condition) {
 
 // Envoie de la commande //
 
-function sendOrder() {
-    const firstname = document.getElementById('firstname').value;
-    const lastname = document.getElementById('lastname').value;
+function sendOrder(e) {
+    const firstname = document.getElementById('firstName').value;
+    const lastname = document.getElementById('lastName').value;
     const adress = document.getElementById('adress').value;
     const postalCode = document.getElementById('postalCode').value;
     const email = document.getElementById('email').value;
     const city = document.getElementById('city').value;
+    let cardItems = localStorage.getItem('differentProduct');
+    cardItems = JSON.parse(cardItems);
+    console.log(cardItems);
     
     const emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
     const postalCodeRegex = /[0-9]{5}(-[0-9]{4})?/;
 
     if(!(firstname.length > 1 && lastname.length > 1 && emailRegex.test(email) && adress.length > 6 && postalCodeRegex.test(postalCode) && city.length > 1)){
-        alert("Veuillez remplir les champs correstements avant de payer votre commande !")
+        alert("Veuillez remplir les champs correctements avant de payer votre commande !")
+        e.preventDefault();
         return
     };
 
-    const products = Object.values(cardItems).map((product) =>{
-        return product._id
-    });
+    const products = []
+
+    for(let id in cardItems){
+      products.push(id)
+    }
+
+   /* Object.values(cardItems).map((product) =>{
+      return product._id
+  });*/
+  console.log(products);
 
     const order = {
         contact: {
             firstName: firstname,
             lastName: lastname,
-            address: adress + '' + postalCode,
+            address: adress + postalCode,
             city: city,
             email: email,
         },
@@ -85,19 +96,28 @@ function sendOrder() {
     };
 
     const requestOptions = {
-        method: 'POST',
-        body: JSON.stringify(order),
-        header: {'Content-Type': 'application/json; charset=utf-8'},
-    };
+        method: "POST",
+        headers: new Headers({
+          'Accept': 'application/json', 
+          'Content-Type': 'application/json; charset=utf-8'}),
+        body: JSON.stringify(order)
+    }
 
     fetch('http://localhost:3000/api/teddies/order', requestOptions)
-    .then((res) => res.json())
-    .then((json) =>{
+    .then((res) => { 
+      res.json().then(function (json) {
         console.log(json);
-        localStorage.removeItem('differentProduct')
-        window.location.href = `confirmation.html?orderId=${json.orderId}`
-    })
-    .catch(() =>{
-        alert(error)
+        localStorage.removeItem('differentProduct');
+        localStorage.removeItem('numberProduct');
+        localStorage.removeItem('total');
+        window.location.href = `http://127.0.0.1:5500/confirmation.html?orderId=${json.orderId}`
     });
+    })
+    .catch(function(error){
+      console.error(error);
+  })
 };
+
+window.addEventListener("DOMContentLoaded", function (){
+  purshase();
+},false);

@@ -91,66 +91,14 @@ function productCard(){
             </div>
         `
     }
-
-// Vérification de la validité du formulaire //
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*    let removeCart = document.getElementsByClassName('remove-cart')
-
-    for(let i = 0; i < removeCart.length; i++){
-        let button = removeCart[i];
-        button.addEventListener('click', function (e) {
-            let cardItems = localStorage.getItem('differentProduct', JSON.stringify(cardItems));
-            let buttonClicked = event.target;
-            buttonClicked.cardItems[i].remove()
-        })
-    }
-
-    let quantityUp = document.querySelector('.quantity-up');
-    let quantityDown = document.querySelector('.quantity-down');
-
-    quantityUp.addEventListener('click',  Object.values(cardItems).map(item =>{
-        let cardItems = localStorage.getItem('differentProduct');
-        cardItems = JSON.parse(cardItems);
-
-         item.quantity += 1;
-    }))
-    
-    quantityDown.addEventListener('click', () =>{
-        let cardItems = localStorage.getItem('differentProduct');
-
-    }) */
-    
 }
+/*
+
+function removeOnCart(itemCart) {
+
+    let removeCart = document.querySelector('remove-cart');
+
+
+} */
 
 window.addEventListener("DOMContentLoaded", onLoad, false);
-
-
-
-     

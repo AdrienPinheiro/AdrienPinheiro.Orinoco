@@ -1,4 +1,4 @@
-header .header-logo a, header .header-nav ul li a, header .header-nav ul .panier a, .articles .card-articles .card-article .teddy, footer .row div ul li a, .teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif .teddy-add, .articles-bear a, .products-container a {
+header .header-logo a, header .header-nav ul li a, header .header-nav ul .panier a, .articles .card-articles .card-article .teddy, .articles .card-articles .card-article .teddy .card-description .cardRow .card-add, footer .row div ul li a, .teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif .teddy-add, .articles-bear a, .products-container a {
   color: black;
   text-decoration: none;
 }
@@ -53,6 +53,12 @@ header .header-logo {
   width: 50%;
 }
 
+@media screen and (max-width: 600px) {
+  header .header-logo {
+    padding-left: 10px;
+  }
+}
+
 header .header-logo a {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -68,9 +74,26 @@ header .header-logo a img {
   height: 65px;
 }
 
+@media screen and (max-width: 600px) {
+  header .header-logo a img {
+    width: 65px;
+    height: 45px;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+}
+
 header .header-logo a h1 {
   line-height: 25px;
   padding-left: 15px;
+}
+
+@media screen and (max-width: 600px) {
+  header .header-logo a h1 {
+    font-size: 1.5em;
+    line-height: 40px;
+  }
 }
 
 header .header-nav {
@@ -98,6 +121,20 @@ header .header-nav ul li {
   padding-left: 25px;
 }
 
+@media screen and (max-width: 1025px) {
+  header .header-nav ul li {
+    padding: 0 25px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  header .header-nav ul li {
+    padding-right: 10px;
+    padding-left: 0;
+    font-size: 1.2em;
+  }
+}
+
 header .header-nav ul .panier {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -112,14 +149,40 @@ header .header-nav ul .panier {
           flex-direction: row;
 }
 
+@media screen and (max-width: 1025px) {
+  header .header-nav ul .panier {
+    padding-right: 25px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  header .header-nav ul .panier {
+    padding-right: 15px;
+  }
+}
+
 header .header-nav ul .panier a i {
   padding-right: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  header .header-nav ul .panier a i {
+    display: none;
+  }
 }
 
 header .header-nav ul .panier a .sr-only {
   position: initial;
   margin: 0;
-  padding: 0;
+}
+
+@media screen and (max-width: 600px) {
+  header .header-nav ul .panier a .sr-only {
+    font-size: 1em;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 3px;
+  }
 }
 
 .research {
@@ -144,6 +207,12 @@ header .header-nav ul .panier a .sr-only {
   line-height: 33px;
 }
 
+@media screen and (max-width: 600px) {
+  .research .research-category {
+    width: 10%;
+  }
+}
+
 .research .search {
   width: 91.66667%;
   padding: 0;
@@ -153,6 +222,13 @@ header .header-nav ul .panier a .sr-only {
 .research .search .search-input {
   width: 90%;
   height: 30px;
+}
+
+@media screen and (max-width: 600px) {
+  .research .search .search-input {
+    width: 85%;
+    text-align: center;
+  }
 }
 
 .research .search .search-submit {
@@ -236,6 +312,13 @@ header .header-nav ul .panier a .sr-only {
   padding: 0 30px 0 30px;
 }
 
+@media screen and (max-width: 1285px) {
+  .articles .card-articles {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+
 .articles .card-articles .card-article {
   width: 25%;
   max-width: 330px;
@@ -246,11 +329,16 @@ header .header-nav ul .panier a .sr-only {
   position: relative;
 }
 
-.articles .card-articles .card-article .card-add {
-  position: absolute;
-  z-index: 1;
-  bottom: 15px;
-  right: 30px;
+@media screen and (max-width: 1285px) {
+  .articles .card-articles .card-article {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .articles .card-articles .card-article {
+    width: 100%;
+  }
 }
 
 .articles .card-articles .card-article .teddy .card-img {
@@ -279,7 +367,20 @@ header .header-nav ul .panier a .sr-only {
   padding: 10px 0 5px 25px;
 }
 
-.articles .card-articles .card-article .teddy .card-description .card-color {
+.articles .card-articles .card-article .teddy .card-description .cardRow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.articles .card-articles .card-article .teddy .card-description .cardRow .card-color {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -290,12 +391,23 @@ header .header-nav ul .panier a .sr-only {
   padding-left: 25px;
 }
 
-.articles .card-articles .card-article .teddy .card-description .card-color p {
+.articles .card-articles .card-article .teddy .card-description .cardRow .card-color p {
   font-size: 1.2em;
 }
 
-.articles .card-articles .card-article .teddy .card-description .card-color div {
+.articles .card-articles .card-article .teddy .card-description .cardRow .card-color div {
   margin-left: 5px;
+}
+
+.articles .card-articles .card-article .teddy .card-description .cardRow .card-add {
+  z-index: 5;
+  border: 1px solid black;
+  border-radius: 5px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding: 10px;
+  margin-right: 10px;
 }
 
 footer {
@@ -305,6 +417,34 @@ footer {
 footer .row {
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+@media screen and (max-width: 1285px) {
+  footer .row {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  footer .row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
 }
 
 footer .row div {
@@ -313,6 +453,13 @@ footer .row div {
 
 footer .row div h2 {
   font-size: 1.2em;
+}
+
+@media screen and (max-width: 600px) {
+  footer .row div h2 {
+    font-size: initial;
+    font-style: none;
+  }
 }
 
 footer .row div ul {
@@ -354,10 +501,19 @@ footer .row div ul li a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 600px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+@media screen and (max-width: 1285px) {
+  .teddy-articles .teddy-card-articles .teddy-card-article {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: auto;
+  }
 }
 
 .teddy-articles .teddy-card-articles .teddy-card-article img {
@@ -367,6 +523,14 @@ footer .row div ul li a:hover {
   border: 1px solid black;
 }
 
+@media screen and (max-width: 1285px) {
+  .teddy-articles .teddy-card-articles .teddy-card-article img {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+}
+
 .teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif {
   width: 33.333%;
   -ms-flex-item-align: center;
@@ -374,14 +538,32 @@ footer .row div ul li a:hover {
       align-self: center;
 }
 
+@media screen and (max-width: 1285px) {
+  .teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif {
+    width: 100%;
+  }
+}
+
 .teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif h3 {
   font-size: 2em;
   padding: 0 0 20px 80px;
 }
 
+@media screen and (max-width: 1285px) {
+  .teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif h3 {
+    text-align: center;
+  }
+}
+
 .teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif p {
   font-size: 1.3em;
   padding-left: 50px;
+}
+
+@media screen and (max-width: 1285px) {
+  .teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif p {
+    text-align: center;
+  }
 }
 
 .teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif .teddy-add {
@@ -394,8 +576,13 @@ footer .row div ul li a:hover {
   margin-left: 20px;
 }
 
+@media screen and (max-width: 1285px) {
+  .teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif .teddy-add {
+    margin-left: 100px;
+  }
+}
+
 .teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif .teddy-card-description {
-  width: 100%;
   padding-bottom: 15px;
 }
 
@@ -409,6 +596,14 @@ footer .row div ul li a:hover {
           flex-direction: row;
   line-height: 0;
   padding: 30px 0;
+}
+
+@media screen and (max-width: 1285px) {
+  .teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif .teddy-card-color {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 .teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif .teddy-card-color p {
@@ -454,6 +649,12 @@ footer .row div ul li a:hover {
           flex-direction: row;
   line-height: 0;
   padding-bottom: 20px;
+}
+
+@media screen and (max-width: 1285px) {
+  .teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif .teddy-card-number {
+    padding-left: 80px;
+  }
 }
 
 .teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif .teddy-card-number p {

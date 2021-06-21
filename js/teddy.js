@@ -91,13 +91,24 @@ function drawTeddy(teddy){
     cardArticles.append(cardTeddy);
 }
 
+/*
+function isInt(value) {
+    var x = parseFloat(value);
+    return !isNaN(value) && (x | 0) === x;
+  } */
+
 function panier(product){
     let add = document.querySelectorAll('.teddy-add');
 
     for(let i = 0; i < add.length; i++){
         add[i].addEventListener("click", () =>{
             let quantity = parseInt(document.getElementById('select-number').value);
-            addProduct(product, quantity);
+
+            if(quantity > 0 && Number.isInteger(quantity) == true){
+                addProduct(product, quantity);  
+            } else {
+                alert("Veuillez remplir avec un chiffre positif !")
+            }
         })
     }
 }

@@ -2,10 +2,24 @@ footer{
     background-color: $primary;
     .row{
         justify-content: space-around;
+        display: flex;
+        flex-direction: row;
+        @include ecran{
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        @include mobile-only{
+            flex-direction: column;
+            align-content: center;
+        }
         div{
             padding: 20px 0;
             h2{
                 font-size: 1.2em;
+                @include mobile-only{
+                    font-size:initial;
+                    font-style: none;
+                }
             }
             ul{
                 list-style: none;

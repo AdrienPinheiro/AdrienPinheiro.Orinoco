@@ -16,24 +16,39 @@
         padding-bottom: 70px;
         .teddy-card-article{
             display: flex;
-            height: 600px;
             justify-content: center;
+            @include ecran{
+                flex-direction: column;
+                height: auto;
+            }
             img{
                 width: 700px;
                 height: 500px;
                 margin-top: 70px;
                 border: 1px solid black;
+                @include ecran{
+                    align-self: center;
+                }
             }
             .teddy-card-descriptif{
                 width: $col4;
                 align-self: center;
+                @include ecran{
+                    width: $col12;
+                }
                 h3{
                     font-size: 2em;
                     padding: 0 0 20px 80px;
+                    @include ecran{
+                        text-align: center;
+                    }
                 }
                 p{
                     font-size: 1.3em;
                     padding-left: 50px;
+                    @include ecran{
+                        text-align: center;
+                    }
                 }
                 .teddy-add{
                     position: relative;
@@ -44,9 +59,11 @@
                     color: white;
                     font-size: 1.3em;
                     margin-left: 20px;
+                    @include ecran{
+                        margin-left: 100px;
+                    }
                 }
                 .teddy-card-description{
-                    width: 100%;
                     padding-bottom: 15px;
                 }
                 .teddy-card-color{
@@ -54,6 +71,9 @@
                     flex-direction: row;
                     line-height: 0;
                     padding: 30px 0;
+                    @include ecran{
+                        justify-content: center;
+                    }
                     p{
                         font-size: 1.3em;
                         padding-right: 20px;
@@ -83,6 +103,9 @@
                     flex-direction: row;
                     line-height: 0;
                     padding-bottom: 20px;
+                    @include ecran{
+                        padding-left: 80px;
+                    }
                     p{
                         padding-right: 5px;
                     }
@@ -91,6 +114,7 @@
                         align-self: center;
                         text-align: center;
                         width: 50px;
+                        
                     }
                 }
             }

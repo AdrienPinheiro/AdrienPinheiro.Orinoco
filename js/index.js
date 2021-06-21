@@ -23,12 +23,7 @@ function drawTeddies(teddies) {
         let cardLink = document.createElement("a");
         cardLink.setAttribute("class", "teddy")
         cardLink.setAttribute("href", "teddy.html?id=" + teddy._id);
-        
-        let cardAdd = document.createElement("a");
-        cardAdd.setAttribute("class", "card-add");
-        cardAdd.setAttribute("href", "#")
-        cardAdd.innerHTML = `Ajouter`;
-        cardTeddy.append(cardLink, cardAdd);
+        cardTeddy.append(cardLink);
 
         let cardDescrition = document.createElement("div");
         cardDescrition.setAttribute("class", "card-description");
@@ -46,10 +41,19 @@ function drawTeddies(teddies) {
         cardPrice.setAttribute("class", "card-price");
         cardPrice.innerHTML = `Prix : ${new Intl.NumberFormat('de-DE', { style:'currency', currency: 'EUR', minimumFractionDigits: 2}).format(teddy.price/100)}`;
 
+        let cardRow = document.createElement("div");
+        cardRow.setAttribute("class", "cardRow");
+
         let cardColor = document.createElement("div");
         cardColor.setAttribute("class", "card-color");
         cardColor.innerHTML = `<p>Coloris:</p>`;
-        cardDescrition.append(cardName, cardPrice, cardColor);
+
+        let cardAdd = document.createElement("a");
+        cardAdd.setAttribute("class", "card-add");
+        cardAdd.setAttribute("href", "#")
+        cardAdd.innerHTML = `Ajouter`;
+        cardDescrition.append(cardName, cardPrice, cardRow);
+        cardRow.append(cardColor, cardAdd);
 
         const teddyColors = teddy.colors;
 
