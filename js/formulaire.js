@@ -79,9 +79,6 @@ function sendOrder(e) {
       products.push(id)
     }
 
-   /* Object.values(cardItems).map((product) =>{
-      return product._id
-  });*/
   console.log(products);
 
     const order = {

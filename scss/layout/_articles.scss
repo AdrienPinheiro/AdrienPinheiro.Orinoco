@@ -32,7 +32,7 @@
             .teddy{
                 @extend %link-style-none;
                 .card-img{
-                    height: 250px;
+                    max-height: 250px;
                     width: $col12;
                     padding: 0;
                 }

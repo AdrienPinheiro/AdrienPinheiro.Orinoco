@@ -1,4 +1,4 @@
-header .header-logo a, header .header-nav ul li a, header .header-nav ul .panier a, .articles .card-articles .card-article .teddy, .articles .card-articles .card-article .teddy .card-description .cardRow .card-add, footer .row div ul li a, .teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif .teddy-add, .articles-bear a, .products-container a {
+header .header-logo a, header .header-nav ul li a, header .header-nav ul .panier a, .articles .card-articles .card-article .teddy, .articles .card-articles .card-article .teddy .card-description .cardRow .card-add, footer .row div ul li a, .teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif .teddy-add, .resultOrder .messageCart a, .articles-bear a, .products-container a {
   color: black;
   text-decoration: none;
 }
@@ -342,7 +342,7 @@ header .header-nav ul .panier a .sr-only {
 }
 
 .articles .card-articles .card-article .teddy .card-img {
-  height: 250px;
+  max-height: 250px;
   width: 100%;
   padding: 0;
 }
@@ -448,7 +448,7 @@ footer .row {
 }
 
 footer .row div {
-  padding: 20px 0;
+  padding: 0;
 }
 
 footer .row div h2 {
@@ -528,6 +528,8 @@ footer .row div ul li a:hover {
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
+    width: 325px;
+    height: 350px;
   }
 }
 
@@ -552,6 +554,7 @@ footer .row div ul li a:hover {
 @media screen and (max-width: 1285px) {
   .teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif h3 {
     text-align: center;
+    padding: 0;
   }
 }
 
@@ -563,6 +566,7 @@ footer .row div ul li a:hover {
 @media screen and (max-width: 1285px) {
   .teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif p {
     text-align: center;
+    padding: 0;
   }
 }
 
@@ -653,7 +657,7 @@ footer .row div ul li a:hover {
 
 @media screen and (max-width: 1285px) {
   .teddy-articles .teddy-card-articles .teddy-card-article .teddy-card-descriptif .teddy-card-number {
-    padding-left: 80px;
+    padding-left: 60px;
   }
 }
 
@@ -790,6 +794,44 @@ footer .row div ul li a:hover {
   margin: 30px 0 60px 0;
 }
 
+.resultOrder {
+  text-align: center;
+  padding: 200px 0 250px 0;
+}
+
+@media screen and (max-width: 600px) {
+  .resultOrder {
+    padding: 100px 0 150px 0;
+  }
+}
+
+.resultOrder .messageCart h2 {
+  font-size: 3em;
+}
+
+@media screen and (max-width: 600px) {
+  .resultOrder .messageCart h2 {
+    font-size: 2em;
+  }
+}
+
+.resultOrder .messageCart p {
+  font-size: 1.5em;
+  padding: 30px 0 80px 0;
+}
+
+.resultOrder .messageCart p span {
+  font-weight: bold;
+}
+
+.resultOrder .messageCart a {
+  font-size: 1.3em;
+  border: 1px solid black;
+  padding: 10px;
+  color: white;
+  background-color: purple;
+}
+
 .Tan {
   background-color: tan;
 }
@@ -884,11 +926,37 @@ footer .row div ul li a:hover {
   position: relative;
 }
 
+@media screen and (max-width: 600px) {
+  .products-container {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  .products-container {
+    max-width: 450px;
+  }
+}
+
 .products-container a {
   position: absolute;
   font-size: 1.5em;
   top: -20px;
   left: -50px;
+}
+
+@media screen and (max-width: 600px) {
+  .products-container a {
+    left: -10px;
+    top: -30px;
+  }
+}
+
+@media screen and (max-width: 1285px) {
+  .products-container a {
+    left: -10px;
+    top: -30px;
+  }
 }
 
 .products-container .product-header {
@@ -967,16 +1035,55 @@ footer .row div ul li a:hover {
   left: 0;
 }
 
+@media screen and (max-width: 600px) {
+  .products-container .products .product .cardImg i {
+    left: -15px;
+  }
+}
+
+@media screen and (max-width: 1285px) {
+  .products-container .products .product .cardImg i {
+    left: -15px;
+  }
+}
+
 .products-container .products .product .cardImg img {
   padding-left: 10px;
   height: 150px;
   width: 200px;
 }
 
+@media screen and (max-width: 600px) {
+  .products-container .products .product .cardImg img {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1285px) {
+  .products-container .products .product .cardImg img {
+    padding-left: 25px;
+    padding-top: 15px;
+    height: 100px;
+    width: 150px;
+  }
+}
+
 .products-container .products .product .cardImg span {
   position: absolute;
   top: 70px;
   right: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  .products-container .products .product .cardImg span {
+    left: 10px;
+  }
+}
+
+@media screen and (max-width: 1285px) {
+  .products-container .products .product .cardImg span {
+    left: 10px;
+  }
 }
 
 .products-container .products .product .price {

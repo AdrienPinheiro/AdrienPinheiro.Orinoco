@@ -4,6 +4,12 @@
     margin: 0 auto;
     margin-top: 50px;
     position: relative;
+    @include mobile-only{
+        width: 300px;
+    }
+    @include tablette-only{
+        max-width: 450px;            
+    }
     
     a{
         position: absolute;
@@ -11,6 +17,14 @@
         top: -20px;
         left: -50px;
         @extend %link-style-none;
+        @include mobile-only{
+            left: -10px;
+            top: -30px;
+        }
+        @include ecran{
+            left: -10px;
+            top: -30px;
+        }
     }
     .product-header{
         width: 100%;
@@ -54,16 +68,37 @@
                     top: 70px;
                     z-index: 9;
                     left: 0;
+                    @include mobile-only{
+                        left: -15px;
+                    }
+                    @include ecran{
+                        left: -15px;
+                    }
                 }
                 img{
                     padding-left: 10px;
                     height: 150px;
                     width: 200px;
+                    @include mobile-only{
+                        display: none;
+                    }
+                    @include ecran{
+                        padding-left: 25px;
+                        padding-top: 15px;
+                        height: 100px;
+                        width: 150px;
+                    }
                 }
                 span{
                     position: absolute;
                     top: 70px;
                     right: 5px;
+                    @include mobile-only{
+                        left: 10px;
+                    }
+                    @include ecran{
+                        left: 10px;
+                    }
                 }
             }
             .price{
