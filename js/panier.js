@@ -1,9 +1,11 @@
 let add = null;
 let cartNumberProduct = null;
+let panierTotal = null;
 
 function onLoad(){
     add = document.querySelectorAll('.card-add');
     cartNumberProduct = document.querySelector('.panier span');
+    panierTotal = document.getElementById('panierTotal');
 
     let productNumbers = localStorage.getItem('numberProduct');
 
@@ -37,6 +39,15 @@ function addProduct(product, quantity = 1){
     computeCartAttr();
 }
 
+function removeProduct(productId) {
+    let products = JSON.parse(localStorage.getItem("differentProduct"));
+    delete products[productId]; 
+    localStorage.setItem("differentProduct", JSON.stringify(products));
+
+    productCard();
+    computeCartAttr();  
+}
+
 function computeCartAttr(){
     let products = JSON.parse(localStorage.getItem("differentProduct"));
     let total = 0;
@@ -46,9 +57,13 @@ function computeCartAttr(){
         total += product.price * product.quantity;
         numberProduct += product.quantity;
     })
-    localStorage.setItem("total", new Intl.NumberFormat('de-DE', { style:'currency', currency: 'EUR', minimumFractionDigits: 2}).format(total/100));
+    let formatedTotal = new Intl.NumberFormat('de-DE', { style:'currency', currency: 'EUR', minimumFractionDigits: 2}).format(total/100)
+    localStorage.setItem("total", formatedTotal);
     localStorage.setItem('numberProduct', numberProduct);
     cartNumberProduct.textContent = numberProduct;
+    if(panierTotal){
+        panierTotal.innerHTML = formatedTotal;
+    }
 }
 
 function productCard(){
@@ -65,7 +80,7 @@ function productCard(){
             productsContainer.innerHTML += `
             <div class= "product">
                 <div class="cardImg">
-                    <i class="fas fa-times-circle remove-cart"></i>
+                    <i class="fas fa-times-circle remove-product" data-product-id="${item._id}"></i>
                     <img src="${item.imageUrl}">
                     <span>${item.name}</span>
                 </div>  
@@ -77,28 +92,42 @@ function productCard(){
                     ${new Intl.NumberFormat('de-DE', { style:'currency', currency: 'EUR', minimumFractionDigits: 2}).format(item.quantity * item.price/100)}
                 </div>
             </div>
-            `;
+            `; 
         });
 
-        productsContainer.innerHTML += `
-            <div class= "panierTotalContainer">
-                <h4 class="panierTotalTitle">
-                    Total:
-                </h4>
-                <h4 class="panierTotal">
-                    ${cardPrice}
-                </h4>
-            </div>
-        `
+        panierTotal.innerHTML = cardPrice;
+        
+        for(let btn of document.getElementsByClassName("remove-product")){
+            btn.addEventListener('click', (e)=>{
+                let productId = e.target.getAttribute("data-product-id");
+                removeProduct(productId);
+            })
+        } 
     }
 }
-/*
-
-function removeOnCart(itemCart) {
-
-    let removeCart = document.querySelector('remove-cart');
 
 
-} */
+function removeOnCart() {
+    
+   /* e.addEventListener('click', () =>{
+        let productId = e.getAttribute("attribut");
+        delete localStorage.differentProduct[productId];
+        //localStorage.removeItem(productId);
+    })*/
+
+    let removeCart = document.getElementsByClassName("remove")
+
+    for(let i of removeCart){
+        console.log('Youplo');
+        i.addEventListener('click', () =>{
+            let productId = i.getAttribute("attribut");
+            console.log(productId);
+            //delete localStorage.differentProduct[productId];
+            localStorage.removeItem("differentProduct", productId);
+            localStorage.getItem('NumberProduct') 
+            localStorage.getItem('total')
+        })
+    }
+}
 
 window.addEventListener("DOMContentLoaded", onLoad, false);
