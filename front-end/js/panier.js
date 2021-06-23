@@ -106,28 +106,4 @@ function productCard(){
     }
 }
 
-
-function removeOnCart() {
-    
-   /* e.addEventListener('click', () =>{
-        let productId = e.getAttribute("attribut");
-        delete localStorage.differentProduct[productId];
-        //localStorage.removeItem(productId);
-    })*/
-
-    let removeCart = document.getElementsByClassName("remove")
-
-    for(let i of removeCart){
-        console.log('Youplo');
-        i.addEventListener('click', () =>{
-            let productId = i.getAttribute("attribut");
-            console.log(productId);
-            //delete localStorage.differentProduct[productId];
-            localStorage.removeItem("differentProduct", productId);
-            localStorage.getItem('NumberProduct') 
-            localStorage.getItem('total')
-        })
-    }
-}
-
 window.addEventListener("DOMContentLoaded", onLoad, false);
