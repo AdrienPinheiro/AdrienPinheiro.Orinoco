@@ -5,17 +5,17 @@ function updateTeddy(){
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const id = urlParams.get("id");
-    fetch('http://localhost:3000/api/teddies/' + id)
+    fetch("http://localhost:3000/api/teddies/" + id)
         .then((res) => res.json())
         .then((data) => {
             console.log("data", data);
             dataTeddies = data;
-            drawTeddy(data);  
+            drawTeddy(data);
             panier(data);
      })
     .catch(function(error){
         console.error(error);
-    }) 
+    })
 }
 
 
@@ -23,15 +23,15 @@ function drawTeddy(teddy){
 
     let cardTeddy = document.createElement("div");
     cardTeddy.setAttribute("class", "teddy-card-article");
-        
+
     let cardDescriptif = document.createElement("div");
     cardDescriptif.setAttribute("class", "teddy-card-descriptif");
-        
+
     let cardImg = document.createElement("img");
     cardImg.setAttribute("src", teddy.imageUrl);
     cardImg.setAttribute("class", "teddy-card-img");
     cardTeddy.append(cardImg, cardDescriptif);
-        
+
     let cardName = document.createElement("h3");
     cardName.setAttribute("class", "teddy-card-name");
     cardName.innerHTML = teddy.name;
@@ -42,7 +42,7 @@ function drawTeddy(teddy){
 
     let cardPrice = document.createElement("p");
     cardPrice.setAttribute("class", "teddy-card-price");
-    cardPrice.innerHTML = `Prix : ${new Intl.NumberFormat('de-DE', { style:'currency', currency: 'EUR', minimumFractionDigits: 2}).format(teddy.price/100)}`;
+    cardPrice.innerHTML = `Prix : ${new Intl.NumberFormat("de-DE", { style:"currency", currency: "EUR", minimumFractionDigits: 2}).format(teddy.price/100)}`;
 
     let cardColor = document.createElement("form");
     cardColor.setAttribute('action', "#");

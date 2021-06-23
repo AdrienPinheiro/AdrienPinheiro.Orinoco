@@ -959,6 +959,19 @@ footer .row div ul li a:hover {
   }
 }
 
+.products-container .panierTotalContainer {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  right: 10px;
+  bottom: -100px;
+}
+
+.products-container .panierTotalContainer .panierTotalTitle {
+  padding-right: 10px;
+}
+
 .products-container .product-header {
   width: 100%;
   max-width: 650px;
@@ -1121,18 +1134,5 @@ footer .row div ul li a:hover {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-}
-
-.products-container .products .panierTotalContainer {
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  right: 10px;
-  bottom: -100px;
-}
-
-.products-container .products .panierTotalContainer .panierTotal {
-  padding-left: 10px;
 }
 /*# sourceMappingURL=style.css.map */

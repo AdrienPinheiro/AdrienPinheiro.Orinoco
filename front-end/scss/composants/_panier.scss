@@ -26,6 +26,15 @@
             top: -30px;
         }
     }
+    .panierTotalContainer{
+        position: absolute;
+        display: flex;
+        right: 10px;
+        bottom: -100px;
+        .panierTotalTitle{
+            padding-right: 10px;
+        }
+    }
     .product-header{
         width: 100%;
         max-width: 650px;
@@ -126,15 +135,6 @@
                 text-align: center;
                 align-self: center;
             }
-        }
-        .panierTotalContainer{
-            position: absolute;
-            display: flex;
-            right: 10px;
-            bottom: -100px;
-            .panierTotal{
-                padding-left: 10px;
-            }
-        }
+        }             
     }
 }

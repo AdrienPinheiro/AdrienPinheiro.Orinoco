@@ -2,13 +2,13 @@ let cardArticles = null;
 let dataTeddies = null;
 
 function updateTeddies(){
-    fetch('http://localhost:3000/api/teddies')
+    fetch("http://localhost:3000/api/teddies")
         .then((res) => res.json())
         .then((data) => {
             console.log("data", data);
-            dataTeddies = data;    
+            dataTeddies = data;
             drawTeddies(data);
-            panier(data); 
+            panier(data);
      })
     .catch(function(error){
         console.error(error);
@@ -39,7 +39,7 @@ function drawTeddies(teddies) {
 
         let cardPrice = document.createElement("p")
         cardPrice.setAttribute("class", "card-price");
-        cardPrice.innerHTML = `Prix : ${new Intl.NumberFormat('de-DE', { style:'currency', currency: 'EUR', minimumFractionDigits: 2}).format(teddy.price/100)}`;
+        cardPrice.innerHTML = `Prix:${new Intl.NumberFormat("de-DE", { style:"currency", currency: "EUR", minimumFractionDigits: 2}).format(teddy.price/100)}`;
 
         let cardRow = document.createElement("div");
         cardRow.setAttribute("class", "cardRow");

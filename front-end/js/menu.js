@@ -1,4 +1,4 @@
-window.addEventListener("DOMContentLoaded", function (){
+/*window.addEventListener("DOMContentLoaded", function (){
     const bouton = document.querySelector(".research-category")
     const column = document.querySelector(".column")
     const category = document.querySelector(".category")
@@ -9,6 +9,5 @@ window.addEventListener("DOMContentLoaded", function (){
         appear = document.querySelector(".menu-btn").classList.add('menu-btn-appear');
         menu = document.querySelector(".menu").classList.add('menu-background');
     });
-},false);
+},false);*/
 
-// faire apparaitre juste une grosse div 

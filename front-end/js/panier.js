@@ -3,20 +3,20 @@ let cartNumberProduct = null;
 let panierTotal = null;
 
 function onLoad(){
-    add = document.querySelectorAll('.card-add');
-    cartNumberProduct = document.querySelector('.panier span');
-    panierTotal = document.getElementById('panierTotal');
+    add = document.querySelectorAll(".card-add");
+    cartNumberProduct = document.querySelector(".panier span");
+    panierTotal = document.getElementById("panierTotal");
 
-    let productNumbers = localStorage.getItem('numberProduct');
+    let productNumbers = localStorage.getItem("numberProduct");
 
     if(productNumbers){
         cartNumberProduct.textContent = productNumbers;
     }
     productCard();
-} 
+}
 
 function addProduct(product, quantity = 1){
-    let cardItems = localStorage.getItem('differentProduct');
+    let cardItems = localStorage.getItem("differentProduct");
 
     cardItems = JSON.parse(cardItems);
 
@@ -41,11 +41,11 @@ function addProduct(product, quantity = 1){
 
 function removeProduct(productId) {
     let products = JSON.parse(localStorage.getItem("differentProduct"));
-    delete products[productId]; 
+    delete products[productId];
     localStorage.setItem("differentProduct", JSON.stringify(products));
 
     productCard();
-    computeCartAttr();  
+    computeCartAttr();
 }
 
 function computeCartAttr(){
@@ -57,9 +57,9 @@ function computeCartAttr(){
         total += product.price * product.quantity;
         numberProduct += product.quantity;
     })
-    let formatedTotal = new Intl.NumberFormat('de-DE', { style:'currency', currency: 'EUR', minimumFractionDigits: 2}).format(total/100)
+    let formatedTotal = new Intl.NumberFormat("de-DE", { style:"currency", currency: "EUR", minimumFractionDigits: 2}).format(total/100)
     localStorage.setItem("total", formatedTotal);
-    localStorage.setItem('numberProduct', numberProduct);
+    localStorage.setItem("numberProduct", numberProduct);
     cartNumberProduct.textContent = numberProduct;
     if(panierTotal){
         panierTotal.innerHTML = formatedTotal;
@@ -68,7 +68,7 @@ function computeCartAttr(){
 
 function productCard(){
 
-    let cardItems = localStorage.getItem('differentProduct');
+    let cardItems = localStorage.getItem("differentProduct");
     cardItems = JSON.parse(cardItems);
     let cardPrice = localStorage.getItem("total");
 
@@ -83,8 +83,8 @@ function productCard(){
                     <i class="fas fa-times-circle remove-product" data-product-id="${item._id}"></i>
                     <img src="${item.imageUrl}">
                     <span>${item.name}</span>
-                </div>  
-                <div class="price">${new Intl.NumberFormat('de-DE', { style:'currency', currency: 'EUR', minimumFractionDigits: 2}).format(item.price/100)}</div>
+                </div>
+                <div class="price">${new Intl.NumberFormat("de-DE", { style:"currency", currency: "EUR", minimumFractionDigits: 2}).format(item.price/100)}</div>
                 <div class= "quantity">
                     <span>${item.quantity}</span>
                 </div>
