@@ -62,7 +62,6 @@ function sendOrder(e) {
     const city = document.getElementById("city").value;
     let cardItems = localStorage.getItem("differentProduct");
     cardItems = JSON.parse(cardItems);
-    console.log(cardItems);
 
     const emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
     const postalCodeRegex = /[0-9]{5}(-[0-9]{4})?/;
@@ -72,6 +71,12 @@ function sendOrder(e) {
         e.preventDefault();
         return
     };
+
+    if(cardItems == null){
+      alert("Veuillez choisir des articles pour la commande.")
+      e.preventDefault();
+      return
+    }
 
     const products = []
 
