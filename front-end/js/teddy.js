@@ -91,12 +91,6 @@ function drawTeddy(teddy){
     cardArticles.append(cardTeddy);
 }
 
-/*
-function isInt(value) {
-    var x = parseFloat(value);
-    return !isNaN(value) && (x | 0) === x;
-  } */
-
 function panier(product){
     let add = document.querySelectorAll('.teddy-add');
 
