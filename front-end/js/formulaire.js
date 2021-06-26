@@ -1,3 +1,6 @@
+// Donne un coté visuel pour la validité du formulaire suivant des conditions
+// Permet de lancer la fonction sendOrder qui envoie les données du panier et du formulaire
+
 function purshase() {
     document.getElementById("confirmPurshase").onclick = (e) =>{
         sendOrder(e);
@@ -18,6 +21,7 @@ function purshase() {
     watchValidity(document.getElementById("city"), (e) => e.target.value.length > 1)
 }
 
+// Visuel pour la validité du formulaire
 
 function watchValidity(e, condition) {
     e.oninput = (e) => {
@@ -51,7 +55,9 @@ function watchValidity(e, condition) {
   }
 
 
-// Envoie de la commande //
+// Vérification des données du formulaire et du panier
+// Construction du tableau à envoyer à l'api
+// Envoie des données à l'api
 
 function sendOrder(e) {
     const firstname = document.getElementById("firstName").value;
@@ -119,6 +125,8 @@ function sendOrder(e) {
       console.error(error);
   })
 };
+
+// Attend que la page html soit chargé avant de lancer une fonction
 
 window.addEventListener("DOMContentLoaded", function (){
   purshase();

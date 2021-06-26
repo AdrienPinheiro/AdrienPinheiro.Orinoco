@@ -1,6 +1,10 @@
 let cardArticles = null;
 let dataTeddies = null;
 
+
+// Récupère les données de l'api concernant l'ours sélectionné grâce à son id
+// Ajout de l'id en paramètre ULR pour différencier chaque ours
+
 function updateTeddy(){
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -18,6 +22,9 @@ function updateTeddy(){
     })
 }
 
+// Code l'html de l'ours récupéré
+// Ajoute un sélecteur de couleur avec les pastilles de l'index
+// Ajoute un index pour choisir la quantité d'ours désiré
 
 function drawTeddy(teddy){
 
@@ -74,8 +81,8 @@ function drawTeddy(teddy){
         let teddyColor = document.createElement("option");
         let teddyColorName = document.createElement("p");
 
-        teddyColor.value = teddyColors.length; // a chercher
-        teddyColor.setAttribute("class", teddyColors[i]); // petit prob sur certain
+        teddyColor.value = teddyColors.length;
+        teddyColor.setAttribute("class", teddyColors[i]);
         selectColor.append(teddyColor);
         
         teddyColorName.innerHTML = `:${teddy.colors[i]}`;
@@ -90,6 +97,8 @@ function drawTeddy(teddy){
 
     cardArticles.append(cardTeddy);
 }
+
+// Permet de rajouter au panier la quantité d'ours souhaité dans l'input et de vérifier sa validité
 
 function panier(product){
     let add = document.querySelectorAll('.teddy-add');
@@ -106,6 +115,8 @@ function panier(product){
         })
     }
 }
+
+// Attend que la page html soit chargé avant de récupérer les données dans l'api de l'id correspondant
 
 window.addEventListener("DOMContentLoaded", function (){
     cardArticles = document.querySelector('.teddy-card-articles')

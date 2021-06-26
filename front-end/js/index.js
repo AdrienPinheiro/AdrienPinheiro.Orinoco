@@ -1,6 +1,8 @@
 let cardArticles = null;
 let dataTeddies = null;
 
+// Récupère les données de l'api concernants les ours en peluche
+
 function updateTeddies(){
     fetch("http://localhost:3000/api/teddies")
         .then((res) => res.json())
@@ -14,6 +16,10 @@ function updateTeddies(){
         console.error(error);
     })
 }
+
+// Code l'html de tout les objets récuperés
+// Rajoute les couleurs en pastille 
+// Permet d'ajouter un bouton pour rajouter au panier l'élément directement
 
 function drawTeddies(teddies) {
     teddies.forEach(function (teddy) {
@@ -66,6 +72,9 @@ function drawTeddies(teddies) {
     })
 }
 
+
+// Permet de rajouter l'élément ciblé au panier
+
 function panier(product){
     let add = document.querySelectorAll('.card-add');
 
@@ -75,6 +84,8 @@ function panier(product){
         })
     }
 }
+
+// Attend que la page html soit chargé avant de récuperer les données de l'api
 
 window.addEventListener("DOMContentLoaded", function (){
     cardArticles = document.querySelector('.card-articles')

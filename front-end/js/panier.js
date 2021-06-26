@@ -2,6 +2,8 @@ let add = null;
 let cartNumberProduct = null;
 let panierTotal = null;
 
+// Remet à jour le nombre de produit affiché dans le panier quand on recharge la page
+
 function onLoad(){
     add = document.querySelectorAll(".card-add");
     cartNumberProduct = document.querySelector(".panier span");
@@ -14,6 +16,8 @@ function onLoad(){
     }
     productCard();
 }
+
+// Permet de stocker les produits sélectionnés dans le local storage et d'y ajouter un paramètre quantité
 
 function addProduct(product, quantity = 1){
     let cardItems = localStorage.getItem("differentProduct");
@@ -39,6 +43,9 @@ function addProduct(product, quantity = 1){
     computeCartAttr();
 }
 
+// Permet la suppression d'article dans le panier
+// Relance aussi l'écriture de l'html et les calculs de prix et de quantité final.
+
 function removeProduct(productId) {
     let products = JSON.parse(localStorage.getItem("differentProduct"));
     delete products[productId];
@@ -47,6 +54,9 @@ function removeProduct(productId) {
     productCard();
     computeCartAttr();
 }
+
+// Calcul le total du panier
+// Calcul le nombre d'article pour chacun
 
 function computeCartAttr(){
     let products = JSON.parse(localStorage.getItem("differentProduct"));
@@ -65,6 +75,10 @@ function computeCartAttr(){
         panierTotal.innerHTML = formatedTotal;
     }
 }
+
+// Code l'html de présentation dans le panier pour chaque article
+// Calcul le prix total de chaque article
+// Permet lancer la fonction pour supprimer un article
 
 function productCard(){
 
